@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "wriggle-expo-clone",
+    "description": "react native wriggle clone with expo",
+    "slug": "wriggle-expo-clone",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "version": "0.0.1",
+    "platforms": ["android", "ios"],
+    "orientation": "portrait",
+    "primaryColor": "#1d2d3a",
+    "icon": "",
+    "splash": {
+      "backgroundColor": "#1d2d3a",
+      "image": "",
+      "resizeMode": "cover"
+    },
+    "assetBundlePatterns": ["src/assets/**/*"],
+    "android": {
+      "versionCode": 1
+    },
+    "ios": {
+      "buildNumber": "0.0.1",
+      "supportsTablet": true
+    }
+  }
+}
