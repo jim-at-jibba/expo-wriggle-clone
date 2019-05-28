@@ -12,8 +12,8 @@ import EventsScreen from '../screens/EventsScreen';
 import VenuesScreen from '../screens/VenuesScreen';
 import RewardsScreen from '../screens/RewardsScreen';
 import AccountScreen from '../screens/AccountScreen';
-// grab svg icons
 
+// grab svg icons
 import SvgHome from '../components/icons/Svg.Home';
 
 // Offers Stack
@@ -87,7 +87,7 @@ RewardsStack.navigationOptions = {
 // Account Stack
 // /////////////////////////////////////////////////////////////////////////////
 const AccountStack = createStackNavigator({
-  Account: AccountScreen
+  Accounts: AccountScreen
 });
 
 const AccountTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
@@ -97,7 +97,7 @@ AccountTabBarIcon.propTypes = {
 };
 
 AccountStack.navigationOptions = {
-  tabBarLabel: 'Parp',
+  tabBarLabel: 'Account',
   tabBarIcon: AccountTabBarIcon
 };
 
@@ -107,7 +107,7 @@ export default createBottomTabNavigator(
     EventsStack,
     VenuesStack,
     RewardsStack,
-    AccountScreen
+    AccountStack
   },
   {
     initialRouteName: 'OffersStack',
