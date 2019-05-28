@@ -7,96 +7,110 @@ import PropTypes from 'prop-types';
 import { colors } from '../api/constants';
 
 // grab screens
-import HomeScreen from '../screens/HomeScreen';
-import MultiBaseScreen from '../screens/MultiBaseScreen';
-import MultiLevel2Screen from '../screens/MultiLevel2Screen';
-import SettingsScreen from '../screens/SettingsScreen';
-import StatsScreen from '../screens/StatsScreen';
-
+import OffersScreen from '../screens/OffersScreen';
+import EventsScreen from '../screens/EventsScreen';
+import VenuesScreen from '../screens/VenuesScreen';
+import RewardsScreen from '../screens/RewardsScreen';
+import AccountScreen from '../screens/AccountScreen';
 // grab svg icons
-import SvgCog from '../components/icons/Svg.Cog';
+
 import SvgHome from '../components/icons/Svg.Home';
-import SvgPages from '../components/icons/Svg.Pages';
-import SvgStats from '../components/icons/Svg.Stats';
 
-// Home Stack
+// Offers Stack
 // /////////////////////////////////////////////////////////////////////////////
-const HomeStack = createStackNavigator({
-  Home: HomeScreen
+const OffersStack = createStackNavigator({
+  Offers: OffersScreen
 });
 
-const HomeTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
-HomeTabBarIcon.propTypes = {
+const OffersTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
+OffersTabBarIcon.propTypes = {
   // required
   focused: PropTypes.bool.isRequired
 };
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: HomeTabBarIcon
+OffersStack.navigationOptions = {
+  tabBarLabel: 'Offers',
+  tabBarIcon: OffersTabBarIcon
 };
 
-// Pages Stack
+// Events Stack
 // /////////////////////////////////////////////////////////////////////////////
-const MultiStack = createStackNavigator({
-  MultiBase: MultiBaseScreen,
-  MultiLevel2: MultiLevel2Screen
+const EventsStack = createStackNavigator({
+  Events: EventsScreen
 });
 
-const MultiTabBarIcon = ({ focused }) => <SvgPages active={focused} />;
-MultiTabBarIcon.propTypes = {
+const EventsTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
+EventsTabBarIcon.propTypes = {
   // required
   focused: PropTypes.bool.isRequired
 };
 
-MultiStack.navigationOptions = {
-  tabBarLabel: 'Multi',
-  tabBarIcon: MultiTabBarIcon
+EventsStack.navigationOptions = {
+  tabBarLabel: 'Events',
+  tabBarIcon: EventsTabBarIcon
 };
 
-// Settings Stack
+// Venues Stack
 // /////////////////////////////////////////////////////////////////////////////
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen
+const VenuesStack = createStackNavigator({
+  Venues: VenuesScreen
 });
 
-const SettingsTabBarIcon = ({ focused }) => <SvgCog active={focused} />;
-SettingsTabBarIcon.propTypes = {
+const VenuesTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
+VenuesTabBarIcon.propTypes = {
   // required
   focused: PropTypes.bool.isRequired
 };
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: SettingsTabBarIcon
+VenuesStack.navigationOptions = {
+  tabBarLabel: 'Venues',
+  tabBarIcon: VenuesTabBarIcon
 };
 
-// Status Stack
+// Rewards Stack
 // /////////////////////////////////////////////////////////////////////////////
-const StatsStack = createStackNavigator({
-  Stats: StatsScreen
+const RewardsStack = createStackNavigator({
+  Rewards: RewardsScreen
 });
 
-const StatsTabBarIcon = ({ focused }) => <SvgStats active={focused} />;
-StatsTabBarIcon.propTypes = {
+const RewardsTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
+RewardsTabBarIcon.propTypes = {
   // required
   focused: PropTypes.bool.isRequired
 };
 
-StatsStack.navigationOptions = {
-  tabBarLabel: 'Stats',
-  tabBarIcon: StatsTabBarIcon
+RewardsStack.navigationOptions = {
+  tabBarLabel: 'Rewards',
+  tabBarIcon: RewardsTabBarIcon
+};
+
+// Account Stack
+// /////////////////////////////////////////////////////////////////////////////
+const AccountStack = createStackNavigator({
+  Account: AccountScreen
+});
+
+const AccountTabBarIcon = ({ focused }) => <SvgHome active={focused} />;
+AccountTabBarIcon.propTypes = {
+  // required
+  focused: PropTypes.bool.isRequired
+};
+
+AccountStack.navigationOptions = {
+  tabBarLabel: 'Parp',
+  tabBarIcon: AccountTabBarIcon
 };
 
 export default createBottomTabNavigator(
   {
-    HomeStack,
-    MultiStack,
-    SettingsStack,
-    StatsStack
+    OffersStack,
+    EventsStack,
+    VenuesStack,
+    RewardsStack,
+    AccountScreen
   },
   {
-    initialRouteName: 'HomeStack',
+    initialRouteName: 'OffersStack',
     tabBarOptions: {
       activeTintColor: colors.brandPrimary,
       inactiveTintColor: colors.grey
